@@ -2,8 +2,8 @@ name: Publish Package
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "create-my-boilerplate@*"
 
 jobs:
   publish:
@@ -32,6 +32,6 @@ jobs:
         run: pnpm build
 
       - name: Publish
-        run: pnpm publish --access public
+        run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
