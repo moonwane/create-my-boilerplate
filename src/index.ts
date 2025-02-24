@@ -32,7 +32,9 @@ async function init() {
   let targetDir = defaultTargetDir;
   const getProjectName = () => path.basename(path.resolve(targetDir));
 
-  let result: prompts.Answers<'projectName' | 'overwrite' | 'packageName' | 'framework'>;
+  let result: prompts.Answers<
+    'projectName' | 'overwrite' | 'packageName' | 'framework'
+  >;
 
   try {
     result = await prompts(
@@ -47,10 +49,13 @@ async function init() {
           },
         },
         {
-          type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'select'),
+          type: () =>
+            !fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'select',
           name: 'overwrite',
           message: () =>
-            (targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`) +
+            (targetDir === '.'
+              ? 'Current directory'
+              : `Target directory "${targetDir}"`) +
             ` is not empty. Please choose how to proceed:`,
           initial: 0,
           choices: [
@@ -82,7 +87,8 @@ async function init() {
           name: 'packageName',
           message: reset('Package name:'),
           initial: () => toValidPackageName(getProjectName()),
-          validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
+          validate: (dir) =>
+            isValidPackageName(dir) || 'Invalid package.json name',
         },
         {
           type: 'select',
@@ -127,7 +133,11 @@ async function init() {
 
   console.log(`\nScaffolding project in ${root}...`);
 
-  const templateDir = path.resolve(import.meta.dirname, '..', `template-${template}`);
+  const templateDir = path.resolve(
+    import.meta.dirname,
+    '..',
+    `template-${template}`,
+  );
 
   const write = (file: string, content?: string) => {
     const targetPath = path.join(root, renameFiles[file] ?? file);
@@ -143,7 +153,9 @@ async function init() {
     write(file);
   }
 
-  const pkg = JSON.parse(fs.readFileSync(path.join(templateDir, 'package.json'), 'utf-8'));
+  const pkg = JSON.parse(
+    fs.readFileSync(path.join(templateDir, 'package.json'), 'utf-8'),
+  );
 
   pkg.name = packageName || getProjectName();
 
@@ -152,7 +164,9 @@ async function init() {
   const cdProjectName = path.relative(cwd, root);
   console.log(`\nDone. Now run:\n`);
   if (root !== cwd) {
-    console.log(`  cd ${cdProjectName.includes(' ') ? `"${cdProjectName}"` : cdProjectName}`);
+    console.log(
+      `  cd ${cdProjectName.includes(' ') ? `"${cdProjectName}"` : cdProjectName}`,
+    );
   }
   console.log(`  pnpm install`);
   console.log(`  pnpm run dev`);
@@ -173,7 +187,9 @@ function copy(src: string, dest: string) {
 }
 
 function isValidPackageName(projectName: string) {
-  return /^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(projectName);
+  return /^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(
+    projectName,
+  );
 }
 
 function toValidPackageName(projectName: string) {
