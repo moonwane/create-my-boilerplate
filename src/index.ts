@@ -16,8 +16,8 @@ type Framework = {
 
 const FRAMEWORKS: Framework[] = [
   {
-    name: 'react',
-    display: 'React',
+    name: 'next',
+    display: 'Next',
     color: cyan,
   },
 ];
