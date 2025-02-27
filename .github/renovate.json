@@ -2,5 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "labels": ["dependencies"],
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "timezone": "Asia/Shanghai",
+  "schedule": ["* * * * 0,6"]
 }
