@@ -12,8 +12,8 @@ importers:
         specifier: ^4.4.1
         version: 4.4.1(prettier@3.5.3)
       '@types/node':
-        specifier: ^22.13.5
-        version: 22.13.5
+        specifier: ^22.13.17
+        version: 22.13.17
       '@types/prompts':
         specifier: ^2.4.9
         version: 2.4.9
@@ -548,8 +548,8 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
-  '@types/node@22.13.5':
-    resolution: {integrity: sha512-+lTU0PxZXn0Dr1NBtC7Y8cR21AJr87dLLU953CWA6pMxxv/UDc7jYAY90upcrie1nRcD6XNG5HOYEDtgW5TxAg==}
+  '@types/node@22.13.17':
+    resolution: {integrity: sha512-nAJuQXoyPj04uLgu+obZcSmsfOenUg6DxPKogeUy6yNCFwWaj5sBF8/G/pNo8EtBJjAfSVgfIlugR/BCOleO+g==}
 
   '@types/prompts@2.4.9':
     resolution: {integrity: sha512-qTxFi6Buiu8+50/+3DGIWLHM6QuWsEKugJnnP6iv2Mc4ncxE4A/OJkjuVOA+5X0X1S/nq5VJRa8Lu+nwcvbrKA==}
@@ -1463,13 +1463,13 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
-  '@types/node@22.13.5':
+  '@types/node@22.13.17':
     dependencies:
       undici-types: 6.20.0
 
   '@types/prompts@2.4.9':
     dependencies:
-      '@types/node': 22.13.5
+      '@types/node': 22.13.17
       kleur: 3.0.3
 
   '@types/resolve@1.20.2': {}
