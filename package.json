@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/moonwane/create-my-boilerplate",
   "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@ianvs/prettier-plugin-sort-imports": "^4.5.1",
     "@types/node": "^22.14.0",
     "@types/prompts": "^2.4.9",
     "picocolors": "^1.1.1",
