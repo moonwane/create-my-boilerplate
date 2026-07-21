@@ -31,7 +31,7 @@
     "@types/node": "^22.14.0",
     "@types/prompts": "^2.4.9",
     "picocolors": "^1.1.1",
-    "prettier": "^3.5.3",
+    "prettier": "^3.9.6",
     "prompts": "^2.4.2",
     "unbuild": "^3.5.0"
   },
